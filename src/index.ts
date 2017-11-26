@@ -13,5 +13,9 @@ export default function (this: LoaderContext, source: string): string {
 	const rootNamespaceNode = Parser.generateRootNamespaceNode(templateDeclaration);
 	const targetTypeDeclaration = emitter.format(rootNamespaceNode);
 
+	const callback = this.async();
+	if (callback) {
+		callback(null, targetTypeDeclaration);
+	}
 	return targetTypeDeclaration;
 }

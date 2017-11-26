@@ -1,6 +1,6 @@
 {
   "name": "soy-declaration-loader",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Webpack-Loader that extracts type declarations from Google Closure templates (.soy files)",
   "main": "index.js",
   "scripts": {

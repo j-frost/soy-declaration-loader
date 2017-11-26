@@ -1,0 +1,21 @@
+interface com {
+	example {
+		product {
+			package {
+				boilerplate: ({
+					/* title of the page */
+					title: string,
+					language: "zh"|"es"|"en"
+				}) => DocumentFragment;
+				button: ({
+					/* button description text */
+					text: string,
+					/* decides whether the button gets the class */
+					showClass: boolean,
+					/* a CSS class */
+					class?: string
+				}) => DocumentFragment;
+			}
+		}
+	}
+}

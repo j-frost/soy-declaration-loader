@@ -1,0 +1,29 @@
+{namespace com.example.product.package}
+
+/**
+ * Example HTML 5 template.
+ * @param title: string	title of the page
+ * @param language: "zh"|"es"|"en"
+ */
+{template .boilerplate}
+	<!doctype html>
+	<html lang={$language}>
+	<head>
+		<meta charset=utf-8>
+		<title>{if $title}{$title}{else}Title{/if}</title>
+	</head>
+	<body>
+	Body
+	</body>
+	</html>
+{/template}
+
+/**
+ * Example button template.
+ * @param text: string	button description text
+ * @param showClass: boolean decides whether the button gets the class
+ * @param class?: string a CSS class
+ */
+{template .button}
+	<button {if $showClass}class="{$class}"{/if}>{$text}</button>
+{/template}

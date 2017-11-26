@@ -1,0 +1,5 @@
+/**
+ * Example HTML 5 template.
+ * @param title: string	title of the page
+ * @param language: "zh"|"es"|"en"
+ */

@@ -1,0 +1,10 @@
+interface com {
+	example {
+		product {
+			package {
+				boilerplate: ({title: string, language: "zh"|"es"|"en"}) => DocumentFragment;
+				button: ({text: string, showClass: boolean, class?: string}) => DocumentFragment;
+			}
+		}
+	}
+}

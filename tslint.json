@@ -12,6 +12,10 @@
             true,
             "tabs"
         ],
+        "interface-name": [
+            true,
+            "never-prefix"
+        ],
         "label-position": true,
         "max-line-length": [
             true,
@@ -52,6 +56,9 @@
             "check-catch",
             "check-else",
             "check-whitespace"
+        ],
+        "quotemark": [
+            true, "single"
         ],
         "radix": true,
         "semicolon": [

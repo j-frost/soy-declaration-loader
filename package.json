@@ -1,6 +1,6 @@
 {
-  "name": "soy-type",
-  "version": "0.1.0",
+  "name": "soy-declaration-loader",
+  "version": "0.2.0",
   "description": "Webpack-Loader that extracts type declarations from Google Closure templates (.soy files)",
   "main": "index.js",
   "scripts": {
@@ -10,13 +10,11 @@
     "clean": "npm run clean-build",
     "clean-build": "rimraf ./index.js",
     "clean-node": "rimraf ./node_modules/",
-    "prepare-test": "commons-prepare-test",
     "reinstall": "npm run clean-node && npm install",
-    "test": "commons-test",
-    "test-single": "commons-test-single",
+    "test": "mocha --ui bdd --require ts-node/register --require amd-loader spec/**/*.spec.ts",
     "tslint": "tslint ./src/**/*.ts --project tsconfig.json",
     "tslint-fix": "tslint ./src/**/*.ts --project tsconfig.json --fix",
-    "prepublishOnly": "npm run build",
+    "prepublishOnly": "npm run build && npm run test",
     "watch": "webpack --watch --progress --colors --verbose --display-reasons"
   },
   "repository": {
@@ -29,11 +27,21 @@
     "url": "https://github.com/j-frost/soy-declaration-loader/issues"
   },
   "homepage": "https://github.com/j-frost/soy-declaration-loader#readme",
+  "dependencies": {
+    "loader-utils": "^1.1.0"
+  },
   "devDependencies": {
+    "@types/chai": "^4.0.5",
+    "@types/loader-utils": "^1.1.0",
+    "@types/mocha": "^2.2.44",
     "@types/node": "^8.0.47",
-    "@types/yargs": "^8.0.2",
+    "@types/webpack": "^3.8.1",
+    "amd-loader": "0.0.8",
     "awesome-typescript-loader": "^3.3.0",
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1",
     "rimraf": "^2.6.2",
+    "ts-node": "^3.3.0",
     "tslint": "^5.8.0",
     "typescript": "^2.6.1",
     "webpack": "^3.8.1"

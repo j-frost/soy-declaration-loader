@@ -15,7 +15,7 @@ describe('The Loader', () => {
 	});
 
 	it('transforms the input .soy file', () => {
-		const mockCurriedLoader: () => string = loader.bind({ query: '' }, SAMPLE_SOURCE);
+		const mockCurriedLoader: () => string = loader.bind({ query: '', async: () => {} }, SAMPLE_SOURCE);
 		const typingString: string = mockCurriedLoader();
 		expect(typingString).to.equal(SAMPLE_TARGET);
 	});

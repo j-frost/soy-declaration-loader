@@ -1,3 +1,6 @@
+# Notice
+This project is currently on hold indefinitely, because the good folks at Angular actually have a solution for this: https://github.com/angular/clutz. 
+
 # soy-declaration-loader
 
 This project lets you use .soy-file templates from [Google Closure](https://developers.google.com/closure/templates/) projects in [TypeScript](http://www.typescriptlang.org/) projects using [webpack](https://webpack.js.org/) without giving up the many benefits of TypeScripts strong type system. Basically, this loader will generate typings for the soy templates.

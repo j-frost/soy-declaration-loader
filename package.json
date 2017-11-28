@@ -2,11 +2,11 @@
   "name": "soy-declaration-loader",
   "version": "0.2.1",
   "description": "Webpack-Loader that extracts type declarations from Google Closure templates (.soy files)",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "npm run clean && npm run build-dev",
     "build-dev": "webpack --progress --colors --verbose --display-reasons",
-    "build-prod": "webpack -p --progress --bail",
+    "build-prod": "tsc --pretty --project tsconfig.prod.json",
     "clean": "npm run clean-build",
     "clean-build": "rimraf ./index.js",
     "clean-node": "rimraf ./node_modules/",

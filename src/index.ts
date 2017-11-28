@@ -5,17 +5,27 @@ import {Emitter} from './synthesis/emitter';
 import {Lexer} from './syntax/lexer';
 import {Parser} from './semantics/parser';
 
-export default function (this: LoaderContext, source: string): string {
-	const options = getOptions(this);
+export default function (source: string) {
+	return compiler.call(this, source);
+}
+
+function compiler(this: LoaderContext, source: string) {
+	const options = getOptions(this) || {};
+	// const instanceName = options.instance || 'soy-declaration-loader';
+	const callback = this.async();
+	if (!source && callback) {
+		return callback(null, '');
+	}
 	const emitter = new Emitter(options);
 
 	const templateDeclaration = Lexer.tokenize(source);
 	const rootNamespaceNode = Parser.generateRootNamespaceNode(templateDeclaration);
 	const targetTypeDeclaration = emitter.format(rootNamespaceNode);
 
-	const callback = this.async();
+	this.emitFile(this.resourcePath, targetTypeDeclaration, undefined);
+
 	if (callback) {
-		callback(null, targetTypeDeclaration);
+		return callback(null, targetTypeDeclaration, undefined);
 	}
 	return targetTypeDeclaration;
 }
